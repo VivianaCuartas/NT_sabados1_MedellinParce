@@ -1,0 +1,21 @@
+numeroOrden,cliente,listaProductos,fecha
+1053,Juan,"[{'nombre': 'Chompa', 'precio': 50000}, {'nombre': 'Chompa', 'precio': 50000}, {'nombre': 'Chompa', 'precio': 50000}]",2026/09/26
+8974,Carlos,"[{'nombre': 'Chompa', 'precio': 50000}, {'nombre': 'Camiseta_cuello_v', 'precio': 2500000}, {'nombre': 'Camiseta_cuello_redondo', 'precio': 2500000}]",2026/04/14
+6018,Ana,"[{'nombre': 'Camiseta_cuello_v', 'precio': 2500000}, {'nombre': 'Camiseta_cuello_redondo', 'precio': 2500000}, {'nombre': 'Chompa', 'precio': 50000}, {'nombre': 'Buzo', 'precio': 120000}, {'nombre': 'Camiseta_cuello_redondo', 'precio': 2500000}]",2026/09/04
+2913,Carlos,"[{'nombre': 'Camiseta_cuello_redondo', 'precio': 2500000}, {'nombre': 'Camiseta_cuello_redondo', 'precio': 2500000}, {'nombre': 'Buzo', 'precio': 120000}, {'nombre': 'Buzo', 'precio': 120000}]",2026/11/08
+1970,Pedro,"[{'nombre': 'Buzo', 'precio': 120000}, {'nombre': 'Camiseta_cuello_v', 'precio': 2500000}]",2026/06/05
+2867,Juan,"[{'nombre': 'Camiseta_cuello_v', 'precio': 2500000}, {'nombre': 'Chompa', 'precio': 50000}, {'nombre': 'Camiseta_cuello_v', 'precio': 2500000}, {'nombre': 'Camiseta_cuello_v', 'precio': 2500000}]",2026/05/09
+5473,Juan,"[{'nombre': 'Buzo', 'precio': 120000}, {'nombre': 'Camiseta_cuello_redondo', 'precio': 2500000}, {'nombre': 'Camiseta_cuello_v', 'precio': 2500000}, {'nombre': 'Camiseta_cuello_redondo', 'precio': 2500000}]",2026/06/21
+9740,Pedro,"[{'nombre': 'Camiseta_cuello_redondo', 'precio': 2500000}, {'nombre': 'Camiseta_cuello_redondo', 'precio': 2500000}]",2026/04/06
+8865,Maria,"[{'nombre': 'Camiseta_cuello_v', 'precio': 2500000}, {'nombre': 'Camiseta_cuello_redondo', 'precio': 2500000}]",2026/01/03
+4576,Maria,"[{'nombre': 'Camiseta_cuello_v', 'precio': 2500000}, {'nombre': 'Camiseta_cuello_v', 'precio': 2500000}]",2026/08/25
+7750,Juan,"[{'nombre': 'Chompa', 'precio': 50000}, {'nombre': 'Buzo', 'precio': 120000}, {'nombre': 'Chompa', 'precio': 50000}]",2026/07/28
+9324,Pedro,"[{'nombre': 'Camiseta_cuello_redondo', 'precio': 2500000}, {'nombre': 'Buzo', 'precio': 120000}, {'nombre': 'Chompa', 'precio': 50000}, {'nombre': 'Chompa', 'precio': 50000}]",2026/07/25
+5937,Ana,"[{'nombre': 'Buzo', 'precio': 120000}, {'nombre': 'Camiseta_cuello_redondo', 'precio': 2500000}, {'nombre': 'Camiseta_cuello_redondo', 'precio': 2500000}, {'nombre': 'Chompa', 'precio': 50000}]",2026/02/11
+4006,Ana,"[{'nombre': 'Buzo', 'precio': 120000}, {'nombre': 'Chompa', 'precio': 50000}]",2026/07/05
+6045,Maria,"[{'nombre': 'Camiseta_cuello_redondo', 'precio': 2500000}, {'nombre': 'Buzo', 'precio': 120000}, {'nombre': 'Buzo', 'precio': 120000}, {'nombre': 'Chompa', 'precio': 50000}, {'nombre': 'Camiseta_cuello_v', 'precio': 2500000}]",2026/11/28
+2286,Juan,"[{'nombre': 'Chompa', 'precio': 50000}, {'nombre': 'Buzo', 'precio': 120000}]",2026/10/27
+2517,Juan,"[{'nombre': 'Camiseta_cuello_redondo', 'precio': 2500000}, {'nombre': 'Chompa', 'precio': 50000}]",2026/04/01
+3895,Pedro,"[{'nombre': 'Chompa', 'precio': 50000}, {'nombre': 'Buzo', 'precio': 120000}]",2026/03/03
+3757,Carlos,"[{'nombre': 'Camiseta_cuello_v', 'precio': 2500000}, {'nombre': 'Camiseta_cuello_v', 'precio': 2500000}, {'nombre': 'Camiseta_cuello_redondo', 'precio': 2500000}, {'nombre': 'Camiseta_cuello_redondo', 'precio': 2500000}]",2026/04/29
+9256,Carlos,"[{'nombre': 'Camiseta_cuello_redondo', 'precio': 2500000}]",2026/06/11

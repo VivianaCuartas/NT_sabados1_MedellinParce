@@ -1,56 +1,96 @@
 import pandas as pd
 
-
-
 def limpiar_datos(data_frame_sucio):
-    data_frame_limpio=data_frame_sucio.copy()
     
-    #1. Limpiar las columnas String del DF
-    columnas_texto=["NombreProducto","cliente","listaProductos","talla","color"]
+    # Copia del DF original
+    data_frame_limpio = data_frame_sucio.copy()
+    
+    # 0. Normalizar nombres de columnas
+    data_frame_limpio.columns = data_frame_limpio.columns.str.strip().str.lower()
+    
+    # 1. Limpiar columnas de texto (si existen)
+    columnas_texto = ["nombreproducto", "cliente", "listaproductos", "talla", "color", "nombre"]
+    
     for columna in columnas_texto:
-        data_frame_limpio[columna]=data_frame_limpio[columna].astype("string").str.strip().str.lower()
+        if columna in data_frame_limpio.columns:
+            data_frame_limpio[columna] = (
+                data_frame_limpio[columna]
+                .astype("string")
+                .str.strip()
+                .str.lower()
+            )
+    
+    # 1.1 Validar valores esperados
+    valores_validos = [
+        "camiseta_cuello_redondo",
+        "camiseta_cuello_v",
+        "chompa",
+        "buzo"
+    ]
+    
+    if "listaproductos" in data_frame_limpio.columns:
+        data_frame_limpio["listaproductos"] = data_frame_limpio["listaproductos"].where(
+            data_frame_limpio["listaproductos"].isin(valores_validos),
+            pd.NA
+        )
+    
+    if "nombreproducto" in data_frame_limpio.columns:
+        data_frame_limpio["nombreproducto"] = data_frame_limpio["nombreproducto"].where(
+            data_frame_limpio["nombreproducto"].isin(valores_validos),
+            pd.NA
+        )
+    
+    # 2. Limpiar columnas numéricas (si existen)
+    columnas_numericas = [
+        "carritoid", "cantidad", "preciounitario", "total",
+        "totalcompra", "productoid", "usuario_id",
+        "numeroorden", "precio"
+    ]
+    
+    for columna in columnas_numericas:
+        if columna in data_frame_limpio.columns:
+            data_frame_limpio[columna] = pd.to_numeric(
+                data_frame_limpio[columna],
+                errors="coerce"
+            )
+    
+    # 2.1 Validaciones de negocio
+    if "precio" in data_frame_limpio.columns:
+        data_frame_limpio = data_frame_limpio[data_frame_limpio["precio"] >= 1000]
+    
+    if "productoid" in data_frame_limpio.columns:
+        data_frame_limpio = data_frame_limpio[data_frame_limpio["productoid"] > 0]
+    
+    if "cantidad" in data_frame_limpio.columns:
+        data_frame_limpio = data_frame_limpio[data_frame_limpio["cantidad"] > 0]
+    
+    if "total" in data_frame_limpio.columns:
+        data_frame_limpio = data_frame_limpio[data_frame_limpio["total"] > 0]
+    
+    if "totalcompra" in data_frame_limpio.columns:
+        data_frame_limpio = data_frame_limpio[data_frame_limpio["totalcompra"] > 0]
+    
+    # 3. Manejo de fechas
+    if "fecha" in data_frame_limpio.columns:
+        data_frame_limpio["fecha"] = pd.to_datetime(
+            data_frame_limpio["fecha"],
+            errors="coerce"
+        )
         
-    #1.1 Definir valores de string esperados 
-    valores_validos_CarritoItem=["Camiseta_cuello_redondo","Camiseta_cuello_v","Chompa","Buzo"]
-    data_frame_limpio["listaProductos"]=data_frame_limpio["listaProductos"].where(
-        data_frame_limpio["listaProductos"].isin(valores_validos_CarritoItem),
-        pd.NA
-    )
+        fecha_default = pd.to_datetime("2026-01-01")
+        data_frame_limpio["fecha"] = data_frame_limpio["fecha"].fillna(fecha_default)
     
-    #2. Limpiar las columnas numericas del DF
-    data_frame_limpio["CarritoId"]=pd.to_numeric(data_frame_limpio["CarritoId"])
-    data_frame_limpio["Cantidad"]=pd.to_numeric(data_frame_limpio["Cantidad"])
-    data_frame_limpio["PrecioUnitario"]=pd.to_numeric(data_frame_limpio["PrecioUnitario"])
-    data_frame_limpio["Total"]=pd.to_numeric(data_frame_limpio["Total"])
-    data_frame_limpio["TotalCompra"]=pd.to_numeric(data_frame_limpio["Total"])
-    data_frame_limpio["ProductoId"]=pd.to_numeric(data_frame_limpio["ProductoId"])
-    data_frame_limpio["usuario_id"]=pd.to_numeric(data_frame_limpio["usuario_id"])
-    data_frame_limpio["numeroOrden"]=pd.to_numeric(data_frame_limpio["numeroOrden"])
-    data_frame_limpio["precio"]=pd.to_numeric(data_frame_limpio["precio"])
+    # 4. Eliminar registros con datos obligatorios (solo si existen)
+    columnas_obligatorias = ["nombreproducto", "numeroorden", "precio", "usuario_id"]
     
-    #2.1 Limpiando campos numericos que no tengan valores validos
-    data_frame_limpio=data_frame_limpio[data_frame_limpio["precio"]>=1000]
-    data_frame_limpio=data_frame_limpio[data_frame_limpio["ProductoId"]>0]
-    data_frame_limpio=data_frame_limpio[data_frame_limpio["Cantidad"]>0]
-    data_frame_limpio=data_frame_limpio[data_frame_limpio["Total"]>0]
-    data_frame_limpio=data_frame_limpio[data_frame_limpio["TotalCompra"]>0]
+    columnas_presentes = [
+        col for col in columnas_obligatorias if col in data_frame_limpio.columns
+    ]
     
-    #3. Organizar las columnas de tipo fecha
-    data_frame_limpio["fecha"]=pd.to_datetime(data_frame_limpio["fecha"])
+    if columnas_presentes:
+        data_frame_limpio = data_frame_limpio.dropna(subset=columnas_presentes)
     
-    #3.1 si una fecha no viene la reemplazamos por un valor  por defecto
-    fecha_default=pd.to_datetime("2026-01-01")
-    data_frame_limpio["fecha"]=data_frame_limpio["fecha"].fillna(fecha_default)
-    
-    
-    #4 Eliminar registro que tenga datos obligatorios vacios 
-    columna_obligatorias=["NombreProducto","numeroOrden","precio","usuario_id"]
-    data_frame_limpio=data_frame_limpio.dropna(subset=columna_obligatorias)
-    
-    #5 Eliminar registros duplicados
-    data_frame_limpio=data_frame_limpio.drop_duplicates()
+    # 5. Eliminar duplicados
+    data_frame_limpio = data_frame_limpio.drop_duplicates()
     
     return data_frame_limpio
-
-
-    

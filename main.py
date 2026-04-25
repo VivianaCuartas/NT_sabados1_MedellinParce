@@ -1,23 +1,19 @@
 import pandas as pd
 import os
-
 #  Simulación
 from utils.simulacion_Carrito import simular_carrito
 from utils.simulacion_CarritoItem import simular_ordenes as simular_carrito_item
 from utils.simulacion_OrdenCompra import simular_ordenes as simular_orden_compra
 from utils.simulacion_Productos import simular_productos
 from utils.simulacion_Usuario import simular_ordenes_con_usuarios
-
 # Limpieza
 from utils.limpieza import limpiar_datos
-
 # Descripción 
-from utils.descripcion_Carrito import describir_carrito
-from utils.descripcion_CarritoItem import describir_carrito_item
-from utils.descripcion_OrdenCompra import describir_orden_compra
-from utils.descripcion_Productos import describir_productos
-from utils.descripcion_Usuario import describir_usuario
-
+from notebook.descripcion_Carrito import describir_carrito
+from notebook.descripcion_CarritoItem import describir_carrito_item
+from notebook.descripcion_OrdenCompra import describir_orden_compra
+from notebook.descripcion_Productos import describir_productos
+from notebook.descripcion_Usuario import describir_usuario
 # Guardado
 from utils.guardado_JSON_CSV import guardado_data
 

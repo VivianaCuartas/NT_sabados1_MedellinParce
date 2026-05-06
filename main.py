@@ -1,62 +1,75 @@
 import pandas as pd
-import os
-#  Simulación
-from utils.simulacion_Carrito import simular_carrito
-from utils.simulacion_CarritoItem import simular_ordenes as simular_carrito_item
-from utils.simulacion_OrdenCompra import simular_ordenes as simular_orden_compra
-from utils.simulacion_Productos import simular_productos
-from utils.simulacion_Usuario import simular_ordenes_con_usuarios
+from utils.api_client import obtener_usuarios
+from utils.api_client import obtener_productos
+from utils.api_client import obtener_ordenes
+from utils.api_client import obtener_carritos
+from utils.api_client import obtener_carrito_items
+
 # Limpieza
 from utils.limpieza import limpiar_datos
-# Descripción 
+
+# Descripción
 from notebook.descripcion_Carrito import describir_carrito
 from notebook.descripcion_CarritoItem import describir_carrito_item
 from notebook.descripcion_OrdenCompra import describir_orden_compra
 from notebook.descripcion_Productos import describir_productos
 from notebook.descripcion_Usuario import describir_usuario
+
 # Guardado
 from utils.guardado_JSON_CSV import guardado_data
 
 
-# 1. SIMULACIÓN
+# 1. Sacar los datos de la API
 
-simulacion_carrito = simular_carrito(20)
-simulacion_carrito_item = simular_carrito_item(20)
-simulacion_orden_compra = simular_orden_compra(20)
-simulacion_productos = simular_productos(20)
-simulacion_usuarios = simular_ordenes_con_usuarios(20)
+print("Conectando con la API...")
 
-# 2. DATAFRAMES
+data_usuarios = obtener_usuarios()
+data_productos = obtener_productos()
+data_ordenes = obtener_ordenes()
+data_carritos = obtener_carritos()
+data_carrito_items = obtener_carrito_items()
 
-data_frame_carrito = pd.DataFrame(simulacion_carrito)
-data_frame_carrito_item = pd.DataFrame(simulacion_carrito_item)
-data_frame_orden_compra = pd.DataFrame(simulacion_orden_compra)
-data_frame_productos = pd.DataFrame(simulacion_productos)
-data_frame_usuarios = pd.DataFrame(simulacion_usuarios)
-
-# 3. LIMPIEZA
-
-data_frame_carrito_limpio = limpiar_datos(data_frame_carrito)
-data_frame_carrito_item_limpio = limpiar_datos(data_frame_carrito_item)
-data_frame_orden_compra_limpio = limpiar_datos(data_frame_orden_compra)
-data_frame_productos_limpio = limpiar_datos(data_frame_productos)
-data_frame_usuarios_limpio = limpiar_datos(data_frame_usuarios)
-
-# 4. DESCRIPCIÓN
-
-describir_carrito(data_frame_carrito_limpio)
-describir_carrito_item(data_frame_carrito_item_limpio)
-describir_orden_compra(data_frame_orden_compra_limpio)
-describir_productos(data_frame_productos_limpio)
-describir_usuario(data_frame_usuarios_limpio)
-
-# 5. GUARDADO
-
-guardado_data(data_frame_carrito_limpio, "carrito_limpio", "data")
-guardado_data(data_frame_carrito_item_limpio, "carrito_item_limpio", "data")
-guardado_data(data_frame_orden_compra_limpio, "orden_compra_limpio", "data")
-guardado_data(data_frame_productos_limpio, "productos_limpio", "data")
-guardado_data(data_frame_usuarios_limpio, "usuarios_limpio", "data")
+print(f"Usuarios: {len(data_usuarios)}")
+print(f"Productos: {len(data_productos)}")
+print(f"Órdenes: {len(data_ordenes)}")
+print(f"Carritos: {len(data_carritos)}")
+print(f"Carrito Items: {len(data_carrito_items)}")
 
 
-print("\Terminado!")
+# 2. Guardar en DataFrames
+
+df_usuarios = pd.DataFrame(data_usuarios)
+df_productos = pd.DataFrame(data_productos)
+df_ordenes = pd.DataFrame(data_ordenes)
+df_carritos = pd.DataFrame(data_carritos)
+df_carrito_items = pd.DataFrame(data_carrito_items)
+
+
+# 3. Limpieza de datos
+
+df_usuarios_limpio = limpiar_datos(df_usuarios)
+df_productos_limpio = limpiar_datos(df_productos)
+df_ordenes_limpio = limpiar_datos(df_ordenes)
+df_carritos_limpio = limpiar_datos(df_carritos)
+df_carrito_items_limpio = limpiar_datos(df_carrito_items)
+
+
+# 4. Descripcion de los dataframes
+
+describir_usuario(df_usuarios_limpio)
+describir_productos(df_productos_limpio)
+describir_orden_compra(df_ordenes_limpio)
+describir_carrito(df_carritos_limpio)
+describir_carrito_item(df_carrito_items_limpio)
+
+
+# 5. Guardado de los dataframes limpios
+
+guardado_data(df_usuarios_limpio, "usuarios","data")
+guardado_data(df_productos_limpio, "productos","data")
+guardado_data(df_ordenes_limpio, "ordenes","data")
+guardado_data(df_carritos_limpio, "carritos","data")
+guardado_data(df_carrito_items_limpio, "carrito_items","data")
+
+
+print("Completado :)")

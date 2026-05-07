@@ -9,7 +9,7 @@ def describir_orden_compra(df):
     print(df[["totalcompra"]].describe(), "\n")
 
     print("Órdenes únicas:")
-    print(df["numerorden"].nunique(), "\n")
+    print(df["numeroorden"].nunique(), "\n")
 
     print("Clientes únicos que compraron:")
     print(df["usuario_id"].nunique(), "\n")

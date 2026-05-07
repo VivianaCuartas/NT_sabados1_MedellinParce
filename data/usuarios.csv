@@ -1,0 +1,52 @@
+usuario_id,cliente,correo,direccion,telefono,activo
+USR012,Tatiana Martinez Garcia,tatianamartinez12@yahoo.com,"Calle 29 #18-95, Belen",3127513338,True
+USR013,Sofia Jimenez Reyes,sofiajimenez13@gmail.com,"Calle 12 #28-30, El Poblado",3235655277,True
+USR014,Ricardo Sanchez Aguilar,ricardosanchez14@outlook.com,"Calle 58 #76-36, Belen",3101744497,True
+USR015,Diana Reyes Rivera,dianareyes15@yahoo.com,"Calle 28 #98-44, Itaguei",3127436862,True
+USR016,Catalina Martinez Gomez,catalinamartinez16@yahoo.com,"Calle 34 #6-94, Estadio",3223325926,True
+USR017,Camila Valencia Diaz,camilavalencia17@gmail.com,"Calle 38 #81-80, La Candelaria",3197075663,True
+USR018,Edinson Lopez Rodriguez,edinsonlopez18@hotmail.com,"Calle 11 #30-13, Aranjuez",3202039357,True
+USR019,Esteban Herrera Zapata,estebanherrera19@yahoo.com,"Calle 48 #46-27, Sabaneta",3279898778,True
+USR020,Diana Valencia Medina,dianavalencia20@gmail.com,"Calle 82 #22-69, Estadio",3295723485,True
+USR021,Andres Cruz Diaz,andrescruz21@yahoo.com,"Calle 29 #88-42, La Candelaria",3115015728,True
+USR022,Sebastian Arias Rivera,sebastianarias22@outlook.com,"Calle 9 #28-73, Robledo",3292713644,True
+USR023,Natalia Herrera Morales,nataliaherrera23@outlook.com,"Calle 19 #34-18, Manrique",3166203567,True
+USR024,Diego Guerrero Jimenez,diegoguerrero24@outlook.com,"Calle 52 #47-29, Guayabal",3137133144,True
+USR025,Tomas Lopez Mendoza,tomaslopez25@gmail.com,"Calle 20 #81-21, Bello",3282665285,True
+USR026,Monica Lopez Diaz,monicalopez26@outlook.com,"Calle 60 #68-33, Estadio",3248505445,True
+USR027,Jhon Guerrero Martinez,jhonguerrero27@yahoo.com,"Calle 15 #38-56, Castilla",3142455148,True
+USR028,Santiago Guerrero Rojas,santiagoguerrero28@yahoo.com,"Calle 98 #23-65, Buenos Aires",3128564437,True
+USR029,Tatiana Vargas Ramos,tatianavargas29@hotmail.com,"Calle 48 #98-21, Itaguei",3244788454,True
+USR030,Santiago Ramos Rivera,santiagoramos30@outlook.com,"Calle 15 #47-40, El Poblado",3164277491,True
+USR031,Laura Rojas Jimenez,laurarojas31@gmail.com,"Calle 94 #63-9, Envigado",3242997222,True
+USR032,Alejandro Medina Morales,alejandromedina32@hotmail.com,"Calle 68 #78-55, Robledo",3156854146,True
+USR033,Cindy Guerrero Aguilar,cindyguerrero33@hotmail.com,"Calle 52 #86-84, Aranjuez",3200239303,True
+USR034,Ivan Cruz Martinez,ivancruz34@hotmail.com,"Calle 9 #44-3, Belen",3257922918,True
+USR035,Cristian Ramirez Garcia,cristianramirez35@gmail.com,"Calle 30 #9-5, Laureles",3188698723,True
+USR036,Luciana Ramirez Torres,lucianaramirez36@outlook.com,"Calle 70 #17-93, La America",3253288213,True
+USR037,Laura Arias Morales,lauraarias37@outlook.com,"Calle 13 #13-85, La America",3215709421,True
+USR038,Luis Reyes Cruz,luisreyes38@gmail.com,"Calle 8 #52-94, Bello",3191080848,True
+USR039,Laura Sanchez Sanchez,laurasanchez39@outlook.com,"Calle 55 #24-36, Itaguei",3224185777,True
+USR040,Mateo Cruz Arias,mateocruz40@gmail.com,"Calle 84 #70-2, Laureles",3125035035,True
+USR041,Andres Reyes Morales,andresreyes41@outlook.com,"Calle 111 #52-8, La America",3144194440,True
+USR042,Santiago Diaz Torres,santiagodiaz42@outlook.com,"Calle 55 #90-94, Aranjuez",3249187923,True
+USR043,Daniela Sanchez Flores,danielasanchez43@hotmail.com,"Calle 75 #95-70, Laureles",3116363172,True
+USR044,Isabella Rodriguez Jimenez,isabellarodriguez44@outlook.com,"Calle 118 #68-21, Buenos Aires",3115268494,True
+USR045,Sofia Munoz Perez,sofiamunoz45@gmail.com,"Calle 9 #87-31, Estadio",3208387674,True
+USR046,Paola Ramirez Jimenez,paolaramirez46@gmail.com,"Calle 11 #54-85, Estadio",3256678336,True
+USR047,Juliana Valencia Torres,julianavalencia47@hotmail.com,"Calle 31 #34-51, Castilla",3135132370,True
+USR048,Esteban Rivera Valencia,estebanrivera48@gmail.com,"Calle 59 #80-73, El Poblado",3126838513,True
+USR049,Melissa Sanchez Vargas,melissasanchez49@yahoo.com,"Calle 120 #45-9, Itaguei",3165574598,True
+USR050,Carlos Perez Cruz,carlosperez50@yahoo.com,"Calle 104 #84-68, Estadio",3102099999,True
+USR051,Alejandra Martinez Rojas,alejandramartinez51@hotmail.com,"Calle 15 #14-96, Robledo",3248504841,True
+USR052,Paula Flores Ramos,paulaflores52@hotmail.com,"Calle 27 #88-82, Castilla",3170862638,True
+USR053,Tomas Torres Rojas,tomastorres53@gmail.com,"Calle 82 #55-36, Envigado",3111834450,True
+USR054,David Mendoza Gonzalez,davidmendoza54@yahoo.com,"Calle 95 #57-71, Sabaneta",3289426163,True
+USR055,Ricardo Garcia Martinez,ricardogarcia55@gmail.com,"Calle 70 #5-48, Itaguei",3256366221,True
+USR056,Luis Gonzalez Rodriguez,luisgonzalez56@yahoo.com,"Calle 116 #6-46, Doce de Octubre",3156391990,True
+USR057,Alejandra Martinez Gomez,alejandramartinez57@outlook.com,"Calle 96 #20-31, Estadio",3143621235,True
+USR058,Sara Garcia Perez,saragarcia58@yahoo.com,"Calle 103 #86-95, Santa Cruz",3166616886,True
+USR059,Andres Arias Aguilar,andresarias59@gmail.com,"Calle 112 #5-61, Popular",3159709096,True
+USR060,Esteban Gomez Flores,estebangomez60@hotmail.com,"Calle 4 #85-25, Belen",3206962397,True
+USR061,Paula Munoz Lopez,paulamunoz61@yahoo.com,"Calle 83 #66-52, Doce de Octubre",3282406754,True
+USR1,carlos yepes,carlosyepes021@gmail.com,cra1000,3234403124,True

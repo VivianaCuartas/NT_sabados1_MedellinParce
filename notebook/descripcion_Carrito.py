@@ -1,15 +1,27 @@
+"""
+descripcion_Carrito.py
+Describe el DataFrame de carritos obtenido desde la API.
+"""
+
+
 def describir_carrito(df):
-    print("\n DESCRIPCIÓN CARRITOS\n")
+    print("\n DESCRIPCION CARRITOS\n")
+
+    if df.empty:
+        print("  No hay carritos disponibles.\n")
+        return
 
     print(f"Filas:    {df.shape[0]}")
     print(f"Columnas: {df.shape[1]}")
     print(f"Nombres:  {list(df.columns)}\n")
 
-    print("Carritos únicos:")
-    print(df["carritoid"].nunique(), "\n")
+    if "carritoid" in df.columns:
+        print("Carritos unicos:")
+        print(df["carritoid"].nunique(), "\n")
 
-    print("Usuarios únicos con carrito:")
-    print(df["usuario_id"].nunique(), "\n")
+    if "usuario_id" in df.columns:
+        print("Usuarios unicos con carrito:")
+        print(df["usuario_id"].nunique(), "\n")
 
     if "fecha" in df.columns:
         print("Rango de fechas:")

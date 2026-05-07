@@ -1,15 +1,26 @@
+"""
+limpieza.py
+Limpieza y validacion de DataFrames con datos reales de la API.
+"""
+
 import pandas as pd
 
 
 def limpiar_datos(data_frame_sucio):
 
+    # Si el DataFrame esta vacio, retornarlo sin procesar
+    if data_frame_sucio.empty:
+        return data_frame_sucio
+
     # Copia del DF original
     data_frame_limpio = data_frame_sucio.copy()
 
     # 0. Normalizar nombres de columnas
-    data_frame_limpio.columns = data_frame_limpio.columns.str.strip().str.lower()
+    data_frame_limpio.columns = [
+        str(col).strip().lower() for col in data_frame_limpio.columns
+    ]
 
-    # 1. Limpiar columnas de texto
+    # 1. Limpiar columnas de texto (solo si son string)
     columnas_texto = [
         "cliente", "nombre", "talla", "color",
         "descripcion", "listaproductos", "productos_ids"
@@ -17,14 +28,16 @@ def limpiar_datos(data_frame_sucio):
 
     for columna in columnas_texto:
         if columna in data_frame_limpio.columns:
-            data_frame_limpio[columna] = (
-                data_frame_limpio[columna]
-                .astype("string")
-                .str.strip()
-                .str.lower()
-            )
+            # Solo aplicar str si la columna tiene valores de texto
+            if data_frame_limpio[columna].dtype == object:
+                data_frame_limpio[columna] = (
+                    data_frame_limpio[columna]
+                    .astype("string")
+                    .str.strip()
+                    .str.lower()
+                )
 
-    # 2. Limpiar columnas numéricas
+    # 2. Limpiar columnas numericas
     columnas_numericas = [
         "precio", "totalcompra", "cantidad",
         "cantidad_items", "items", "total"
@@ -56,16 +69,7 @@ def limpiar_datos(data_frame_sucio):
         fecha_default = pd.to_datetime("2026-01-01")
         data_frame_limpio["fecha"] = data_frame_limpio["fecha"].fillna(fecha_default)
 
-    # 4. Eliminar filas con campos obligatorios vacíos
-    columnas_obligatorias = ["usuario_id", "numerorden", "precio", "totalcompra"]
-    columnas_presentes = [
-        col for col in columnas_obligatorias if col in data_frame_limpio.columns
-    ]
-
-    if columnas_presentes:
-        data_frame_limpio = data_frame_limpio.dropna(subset=columnas_presentes)
-
-    # 5. Eliminar duplicados
+    # 4. Eliminar duplicados
     data_frame_limpio = data_frame_limpio.drop_duplicates()
 
     return data_frame_limpio

@@ -1,8 +1,3 @@
-"""
-limpieza.py
-Limpieza y validacion de DataFrames con datos reales de la API.
-"""
-
 import pandas as pd
 
 

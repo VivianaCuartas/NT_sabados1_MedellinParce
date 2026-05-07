@@ -1,12 +1,3 @@
-"""
-api_client.py
-Modulo para consumir los datos reales desde la API de Medellin Parce.
-Reemplaza los archivos de simulacion anteriores.
-
-Requisitos:
-    pip install requests
-"""
-
 import requests
 
 BASE_URL = "http://localhost:8080"
@@ -55,7 +46,6 @@ def obtener_productos():
 def obtener_ordenes():
     """
     Obtiene todas las ordenes de compra desde la API.
-    Expande listaProductos (formato 'PROD001:2,PROD002:1') en columnas separadas.
     """
     res = requests.get(f"{BASE_URL}/ordenCompra")
     res.raise_for_status()
@@ -95,7 +85,6 @@ def obtener_ordenes():
 def obtener_carritos():
     """
     Obtiene todos los carritos desde la API.
-    Si el endpoint falla retorna lista vacia para no detener el pipeline.
     """
     try:
         res = requests.get(f"{BASE_URL}/carritos")
@@ -122,7 +111,6 @@ def obtener_carritos():
 def obtener_carrito_items():
     """
     Obtiene todos los items de carrito desde la API.
-    Si el endpoint falla retorna lista vacia para no detener el pipeline.
     """
     try:
         res = requests.get(f"{BASE_URL}/carritoItems")

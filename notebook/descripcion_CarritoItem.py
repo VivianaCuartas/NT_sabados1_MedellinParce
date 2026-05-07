@@ -1,9 +1,3 @@
-"""
-descripcion_CarritoItem.py
-Describe el DataFrame de items de carrito obtenido desde la API.
-"""
-
-
 def describir_carrito_item(df):
     print("\n DESCRIPCION CARRITO ITEMS\n")
 

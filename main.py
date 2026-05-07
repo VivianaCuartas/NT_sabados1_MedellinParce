@@ -1,4 +1,6 @@
 import pandas as pd
+
+# Datos desde la API
 from utils.api_client import obtener_usuarios
 from utils.api_client import obtener_productos
 from utils.api_client import obtener_ordenes
@@ -8,7 +10,7 @@ from utils.api_client import obtener_carrito_items
 # Limpieza
 from utils.limpieza import limpiar_datos
 
-# Descripción
+# Descripcion
 from notebook.descripcion_Carrito import describir_carrito
 from notebook.descripcion_CarritoItem import describir_carrito_item
 from notebook.descripcion_OrdenCompra import describir_orden_compra
@@ -18,8 +20,11 @@ from notebook.descripcion_Usuario import describir_usuario
 # Guardado
 from utils.guardado_JSON_CSV import guardado_data
 
+# Analitica
+from utils.analitica import generar_graficos
 
-# 1. Sacar los datos de la API
+
+# 1. OBTENER DATOS DESDE LA API
 
 print("Conectando con la API...")
 
@@ -29,14 +34,14 @@ data_ordenes = obtener_ordenes()
 data_carritos = obtener_carritos()
 data_carrito_items = obtener_carrito_items()
 
-print(f"Usuarios: {len(data_usuarios)}")
-print(f"Productos: {len(data_productos)}")
-print(f"Órdenes: {len(data_ordenes)}")
-print(f"Carritos: {len(data_carritos)}")
-print(f"Carrito Items: {len(data_carrito_items)}")
+print(f"  Usuarios: {len(data_usuarios)}")
+print(f"  Productos: {len(data_productos)}")
+print(f"  Ordenes: {len(data_ordenes)}")
+print(f"  Carritos: {len(data_carritos)}")
+print(f"  Carrito Items: {len(data_carrito_items)}")
 
 
-# 2. Guardar en DataFrames
+# 2. CREAR DATAFRAMES
 
 df_usuarios = pd.DataFrame(data_usuarios)
 df_productos = pd.DataFrame(data_productos)
@@ -45,7 +50,7 @@ df_carritos = pd.DataFrame(data_carritos)
 df_carrito_items = pd.DataFrame(data_carrito_items)
 
 
-# 3. Limpieza de datos
+# 3. LIMPIEZA
 
 df_usuarios_limpio = limpiar_datos(df_usuarios)
 df_productos_limpio = limpiar_datos(df_productos)
@@ -54,7 +59,7 @@ df_carritos_limpio = limpiar_datos(df_carritos)
 df_carrito_items_limpio = limpiar_datos(df_carrito_items)
 
 
-# 4. Descripcion de los dataframes
+# 4. DESCRIPCION
 
 describir_usuario(df_usuarios_limpio)
 describir_productos(df_productos_limpio)
@@ -63,13 +68,19 @@ describir_carrito(df_carritos_limpio)
 describir_carrito_item(df_carrito_items_limpio)
 
 
-# 5. Guardado de los dataframes limpios
+# 5. GUARDADO
 
-guardado_data(df_usuarios_limpio, "usuarios","data")
-guardado_data(df_productos_limpio, "productos","data")
-guardado_data(df_ordenes_limpio, "ordenes","data")
-guardado_data(df_carritos_limpio, "carritos","data")
-guardado_data(df_carrito_items_limpio, "carrito_items","data")
+guardado_data(df_usuarios_limpio, "usuarios", "data")
+guardado_data(df_productos_limpio, "productos", "data")
+guardado_data(df_ordenes_limpio, "ordenes", "data")
+guardado_data(df_carritos_limpio, "carritos", "data")
+guardado_data(df_carrito_items_limpio, "carrito_items", "data")
 
 
-print("Completado :)")
+# 6. GRAFICOS
+
+print("\nGenerando graficos...")
+generar_graficos(df_ordenes_limpio, df_productos_limpio)
+
+
+print("\nTerminado!")

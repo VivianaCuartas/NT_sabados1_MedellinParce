@@ -1,4 +1,5 @@
 usuario_id,cliente,correo,direccion,telefono,activo
+ADMIN001,Administrador,admin@medellinparce.com,Medellín,3000000000,True
 USR012,Tatiana Martinez Garcia,tatianamartinez12@yahoo.com,"Calle 29 #18-95, Belen",3127513338,True
 USR013,Sofia Jimenez Reyes,sofiajimenez13@gmail.com,"Calle 12 #28-30, El Poblado",3235655277,True
 USR014,Ricardo Sanchez Aguilar,ricardosanchez14@outlook.com,"Calle 58 #76-36, Belen",3101744497,True
@@ -49,4 +50,3 @@ USR058,Sara Garcia Perez,saragarcia58@yahoo.com,"Calle 103 #86-95, Santa Cruz",3
 USR059,Andres Arias Aguilar,andresarias59@gmail.com,"Calle 112 #5-61, Popular",3159709096,True
 USR060,Esteban Gomez Flores,estebangomez60@hotmail.com,"Calle 4 #85-25, Belen",3206962397,True
 USR061,Paula Munoz Lopez,paulamunoz61@yahoo.com,"Calle 83 #66-52, Doce de Octubre",3282406754,True
-USR1,carlos yepes,carlosyepes021@gmail.com,cra1000,3234403124,True

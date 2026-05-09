@@ -4,7 +4,8 @@ import matplotlib.pyplot as plt
 
 def generar_graficos(df_ordenes, df_productos):
 
-    os.makedirs("graficos", exist_ok=True)
+    ruta_graficos = r"C:\Users\Carlos Yepes\OneDrive\Desktop\React Proyecto final Front\medellinParceReact\medellin-parce-react\public\graficos"
+    os.makedirs(ruta_graficos, exist_ok=True)
 
     # 1. INGRESOS POR MES
     if not df_ordenes.empty and "fecha" in df_ordenes.columns:
@@ -20,7 +21,7 @@ def generar_graficos(df_ordenes, df_productos):
         plt.xlabel("Mes")
         plt.ylabel("Total COP")
         plt.tight_layout()
-        plt.savefig("graficos/ingresos_por_mes.png")
+        plt.savefig(os.path.join(ruta_graficos, "ingresos_por_mes.png"))
         plt.close()
         print("  Guardado: graficos/ingresos_por_mes.png")
 
@@ -38,7 +39,7 @@ def generar_graficos(df_ordenes, df_productos):
         plt.xlabel("Mes")
         plt.ylabel("Cantidad de ordenes")
         plt.tight_layout()
-        plt.savefig("graficos/ordenes_por_mes.png")
+        plt.savefig(os.path.join(ruta_graficos, "ordenes_por_mes.png"))
         plt.close()
         print("  Guardado: graficos/ordenes_por_mes.png")
 
@@ -58,7 +59,7 @@ def generar_graficos(df_ordenes, df_productos):
         plt.xlabel("Cliente")
         plt.ylabel("Total COP")
         plt.tight_layout()
-        plt.savefig("graficos/top_clientes.png")
+        plt.savefig(os.path.join(ruta_graficos, "top_clientes.png"))
         plt.close()
         print("  Guardado: graficos/top_clientes.png")
 
@@ -71,7 +72,7 @@ def generar_graficos(df_ordenes, df_productos):
         plt.xlabel("Total COP")
         plt.ylabel("Frecuencia")
         plt.tight_layout()
-        plt.savefig("graficos/distribucion_totales.png")
+        plt.savefig(os.path.join(ruta_graficos, "distribucion_totales.png"))
         plt.close()
         print("  Guardado: graficos/distribucion_totales.png")
 
@@ -85,6 +86,6 @@ def generar_graficos(df_ordenes, df_productos):
         plt.ylabel("Precio COP")
         plt.xticks(rotation=45, ha="right")
         plt.tight_layout()
-        plt.savefig("graficos/precios_productos.png")
+        plt.savefig(os.path.join(ruta_graficos, "precios_productos.png"))
         plt.close()
         print("  Guardado: graficos/precios_productos.png")

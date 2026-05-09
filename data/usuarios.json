@@ -1,3 +1,4 @@
+{"usuario_id":"ADMIN001","cliente":"Administrador","correo":"admin@medellinparce.com","direccion":"Medellín","telefono":"3000000000","activo":true}
 {"usuario_id":"USR012","cliente":"Tatiana Martinez Garcia","correo":"tatianamartinez12@yahoo.com","direccion":"Calle 29 #18-95, Belen","telefono":"3127513338","activo":true}
 {"usuario_id":"USR013","cliente":"Sofia Jimenez Reyes","correo":"sofiajimenez13@gmail.com","direccion":"Calle 12 #28-30, El Poblado","telefono":"3235655277","activo":true}
 {"usuario_id":"USR014","cliente":"Ricardo Sanchez Aguilar","correo":"ricardosanchez14@outlook.com","direccion":"Calle 58 #76-36, Belen","telefono":"3101744497","activo":true}
@@ -48,4 +49,3 @@
 {"usuario_id":"USR059","cliente":"Andres Arias Aguilar","correo":"andresarias59@gmail.com","direccion":"Calle 112 #5-61, Popular","telefono":"3159709096","activo":true}
 {"usuario_id":"USR060","cliente":"Esteban Gomez Flores","correo":"estebangomez60@hotmail.com","direccion":"Calle 4 #85-25, Belen","telefono":"3206962397","activo":true}
 {"usuario_id":"USR061","cliente":"Paula Munoz Lopez","correo":"paulamunoz61@yahoo.com","direccion":"Calle 83 #66-52, Doce de Octubre","telefono":"3282406754","activo":true}
-{"usuario_id":"USR1","cliente":"carlos yepes","correo":"carlosyepes021@gmail.com","direccion":"cra1000","telefono":"3234403124","activo":true}

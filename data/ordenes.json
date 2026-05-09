@@ -1,3 +1,8 @@
+{"numeroorden":"O177833744","usuario_id":"USR200","listaproductos":"PROD003:1,PROD002:1,PROD004:8","productos_ids":"PROD003,PROD002,PROD004","cantidad_items":10,"fecha":1778284800000,"totalcompra":267512,"mes":5}
+{"numeroorden":"O177834173","usuario_id":"USR200","listaproductos":"PROD006:1","productos_ids":"PROD006","cantidad_items":1,"fecha":1778284800000,"totalcompra":42840,"mes":5}
+{"numeroorden":"O177834206","usuario_id":"USR200","listaproductos":"PROD006:1","productos_ids":"PROD006","cantidad_items":1,"fecha":1778284800000,"totalcompra":42840,"mes":5}
+{"numeroorden":"O177834220","usuario_id":"USR200","listaproductos":"PROD005:1,PROD007:1","productos_ids":"PROD005,PROD007","cantidad_items":2,"fecha":1778284800000,"totalcompra":76160,"mes":5}
+{"numeroorden":"O177836068","usuario_id":"USR061","listaproductos":"PRUEBA001:5","productos_ids":"PRUEBA001","cantidad_items":5,"fecha":1778284800000,"totalcompra":4760000,"mes":5}
 {"numeroorden":"ORD0000001","usuario_id":"USR033","listaproductos":"PROD001:2","productos_ids":"PROD001","cantidad_items":2,"fecha":1777593600000,"totalcompra":95200,"mes":5}
 {"numeroorden":"ORD0000002","usuario_id":"USR023","listaproductos":"PROD001:2,PROD007:2,PROD005:3","productos_ids":"PROD001,PROD007,PROD005","cantidad_items":7,"fecha":1773619200000,"totalcompra":276080,"mes":3}
 {"numeroorden":"ORD0000003","usuario_id":"USR032","listaproductos":"PROD004:3","productos_ids":"PROD004","cantidad_items":3,"fecha":1771977600000,"totalcompra":79968,"mes":2}

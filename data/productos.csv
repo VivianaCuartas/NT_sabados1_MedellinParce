@@ -1,0 +1,8 @@
+productoid,nombre,talla,color,precio,descripcion
+PROD001,Camiseta,M,Azul,50000,Camiseta deportiva azul talla M
+PROD002,Buzo Mujer,S,Negro,22000,Buzo mujer negro talla S
+PROD003,Chompa Mujer,M,Rosa,35000,Chompa mujer rosa talla M
+PROD004,Camiseta Mujer,S,Rojo,28000,Camiseta mujer roja talla S
+PROD005,Camiseta Hombre,M,Negro,30000,Camiseta hombre negra talla M
+PROD006,Sweater Hombre,L,Gris,45000,Sweater hombre gris talla L
+PROD007,Chompa Hombre,L,Vinotinto,50000,Chompa hombre vinotinto talla L
